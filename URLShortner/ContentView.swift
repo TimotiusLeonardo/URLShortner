@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct ContentView: View {
     @State var text = ""
     @StateObject var viewModel = ViewModel()
+    @State private var showToast = false
     
     var body: some View {
         NavigationView {
@@ -19,21 +21,39 @@ struct ContentView: View {
                 ForEach(viewModel.models, id: \.self) { model in
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("https://1pt.co/"+model.short)
+                            HStack {
+                                Text("Result: ")
+                                    .fontWeight(.light)
+                                    .font(.title3)
+                                Text("https://1pt.co/"+model.short)
+                                    .fontWeight(.black)
+                                    .font(.title3)
+                            }
+                            Spacer()
                             Text(model.long)
+                                .fontWeight(.light)
+                                .font(.caption)
                         }
                         Spacer()
                     }
                     .padding()
-                    .onTapGesture {
+                    .onTapGesture(count: 2) {
                         guard let url = URL(string: "https://1pt.co/"+model.short) else {
                             return
                         }
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        UIPasteboard.general.string = url.absoluteString
+                        showToast = true
                     }
+                    .toast(isPresenting: $showToast, duration: 2) {
+                        AlertToast(displayMode: .alert, type: .regular, title: "URL Copied to clipboard")
+                    }
+                    
                 }
             }
             .navigationTitle("URLShorts")
+        }
+        .onTapGesture {
+            UIApplication.shared.endEditing()
         }
     }
     
@@ -44,10 +64,13 @@ struct ContentView: View {
                 .bold()
                 .font(.system(size: 32))
                 .foregroundColor(.white)
-            TextField("URL...", text: $text)
+            TextField("URL...", text: $text, onCommit:  {
+                UIApplication.shared.endEditing()
+            })
                 .padding()
                 .autocapitalization(.none)
                 .background(Color.white)
+                .foregroundColor(.black)
                 .cornerRadius(8.0)
                 .padding()
             

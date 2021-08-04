@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7505E201FA487201682059F7 /* Pods_URLShortner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF73F912EF59B47ABBBCBEAA /* Pods_URLShortner.framework */; };
 		FF3834FD26B9132F0085169F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3834FC26B9132F0085169F /* ViewModel.swift */; };
+		FF38A1EF26B979F900B802EB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF38A1EE26B979F900B802EB /* Extension.swift */; };
 		FF8A3F6926B7DF5D009626FA /* URLShortnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8A3F6826B7DF5D009626FA /* URLShortnerApp.swift */; };
 		FF8A3F6B26B7DF5D009626FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8A3F6A26B7DF5D009626FA /* ContentView.swift */; };
 		FF8A3F6D26B7DF5F009626FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF8A3F6C26B7DF5F009626FA /* Assets.xcassets */; };
@@ -34,7 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10C4B20391B231C0983302C9 /* Pods-URLShortner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLShortner.release.xcconfig"; path = "Target Support Files/Pods-URLShortner/Pods-URLShortner.release.xcconfig"; sourceTree = "<group>"; };
+		CD0B2D424AFF733BD6B6B79B /* Pods-URLShortner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLShortner.debug.xcconfig"; path = "Target Support Files/Pods-URLShortner/Pods-URLShortner.debug.xcconfig"; sourceTree = "<group>"; };
+		DF73F912EF59B47ABBBCBEAA /* Pods_URLShortner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLShortner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3834FC26B9132F0085169F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FF38A1EE26B979F900B802EB /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		FF8A3F6526B7DF5D009626FA /* URLShortner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLShortner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8A3F6826B7DF5D009626FA /* URLShortnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLShortnerApp.swift; sourceTree = "<group>"; };
 		FF8A3F6A26B7DF5D009626FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7505E201FA487201682059F7 /* Pods_URLShortner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CA0981E4995A671F856B79E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD0B2D424AFF733BD6B6B79B /* Pods-URLShortner.debug.xcconfig */,
+				10C4B20391B231C0983302C9 /* Pods-URLShortner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		431B314F020BBCFA135F221B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF73F912EF59B47ABBBCBEAA /* Pods_URLShortner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF8A3F5C26B7DF5D009626FA = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +105,8 @@
 				FF8A3F7926B7DF5F009626FA /* URLShortnerTests */,
 				FF8A3F8426B7DF5F009626FA /* URLShortnerUITests */,
 				FF8A3F6626B7DF5D009626FA /* Products */,
+				1CA0981E4995A671F856B79E /* Pods */,
+				431B314F020BBCFA135F221B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +129,7 @@
 				FF8A3F7126B7DF5F009626FA /* Info.plist */,
 				FF8A3F6E26B7DF5F009626FA /* Preview Content */,
 				FF3834FC26B9132F0085169F /* ViewModel.swift */,
+				FF38A1EE26B979F900B802EB /* Extension.swift */,
 			);
 			path = URLShortner;
 			sourceTree = "<group>";
@@ -140,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF8A3F8A26B7DF5F009626FA /* Build configuration list for PBXNativeTarget "URLShortner" */;
 			buildPhases = (
+				FEFF26E18D27D14CFB15AD7F /* [CP] Check Pods Manifest.lock */,
 				FF8A3F6126B7DF5D009626FA /* Sources */,
 				FF8A3F6226B7DF5D009626FA /* Frameworks */,
 				FF8A3F6326B7DF5D009626FA /* Resources */,
+				F48AA893C1D5EDD80B97EAE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +286,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F48AA893C1D5EDD80B97EAE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLShortner/Pods-URLShortner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLShortner/Pods-URLShortner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-URLShortner/Pods-URLShortner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEFF26E18D27D14CFB15AD7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-URLShortner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF8A3F6126B7DF5D009626FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,6 +336,7 @@
 				FF8A3F6B26B7DF5D009626FA /* ContentView.swift in Sources */,
 				FF3834FD26B9132F0085169F /* ViewModel.swift in Sources */,
 				FF8A3F6926B7DF5D009626FA /* URLShortnerApp.swift in Sources */,
+				FF38A1EF26B979F900B802EB /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +490,7 @@
 		};
 		FF8A3F8B26B7DF5F009626FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0B2D424AFF733BD6B6B79B /* Pods-URLShortner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +513,7 @@
 		};
 		FF8A3F8C26B7DF5F009626FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10C4B20391B231C0983302C9 /* Pods-URLShortner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
